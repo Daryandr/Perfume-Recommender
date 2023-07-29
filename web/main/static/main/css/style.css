@@ -1,0 +1,195 @@
+body{
+	width: 1200px;
+	margin: 0 auto;
+}
+.conteiner{
+	margin: 0 auto;
+}
+header{
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-image: url('../img/fon1.jpg');
+}
+header .info_user{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+header .info_user .nik {
+	font-size: 16px;
+	width: 150px;
+	text-align: center;
+	margin-top: -15px;
+}
+header .info_user img{
+	width: 35%;
+	margin: 0 auto;
+}
+header .title_system h1{
+	text-align: center;
+	width: 850px;
+	font-size: 35px;
+}
+header .title_system h1 a{
+	color: #940f27;
+	text-decoration: none;
+	text-align: center;
+}
+
+/* ********************************* */
+
+.search{
+	width: 1000px;
+	margin: 30px auto;
+	margin-bottom: 40px;
+
+}
+.search form{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.search form input{
+	font-size: 18px;
+	padding: 13px;
+	border: none;
+	border-radius: 20px;
+	background: radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 18px, transparent 18px) 0% 0%/20px 20px no-repeat,
+            radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 18px, transparent 18px) 100% 0%/20px 20px no-repeat,
+            radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 18px, transparent 18px) 0% 100%/20px 20px no-repeat,
+            radial-gradient(circle at 0 0, #ffffff 0, #ffffff 18px, transparent 18px) 100% 100%/20px 20px no-repeat,
+            linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 4px) calc(100% - 40px) no-repeat,
+            linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 40px) calc(100% - 4px) no-repeat,
+            linear-gradient(244deg, transparent 0%, #ff91b2 100%),
+            linear-gradient(96deg, transparent 0%, #DF3050 100%);
+	background-blend-mode: screen;
+	box-sizing: content-box;
+}
+.search form .request{
+	width: 800px;
+}
+.search form .submit{
+	width: 140px;
+	background-blend-mode: multiply;
+	color: #fff;
+	font-size: 20px;
+}
+/* ****************************************** */
+
+.categories .cat{
+	margin-bottom: 35px;
+}
+.categories .cat h2{
+	font-style: italic;
+	margin: auto;
+	margin-bottom: 15px;
+	font-size: 20px;
+	width: 1000px;
+}
+.categories .cat .list_product{
+	/* display: flex;
+	flex-direction: row; */
+	/* display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	justify-content: space-between;
+	gap: 13px;
+	overflow-x: auto; */
+
+	display: grid;
+	grid-gap: 15px;
+	grid-template-columns: repeat(auto-fill, minmax(186px,1fr));
+	grid-auto-flow: column;
+	grid-auto-columns: minmax(186px,1fr);
+	overflow-x: auto;
+	justify-content: space-between;
+	width: 1000px;
+	scrollbar-width: none;
+}
+
+.categories .cat .list_product .card{
+	border: 1px solid #DF3050;
+	text-align: center;
+	padding: 5px;
+}
+.categories .cat .list_product .card a{
+	display: block;
+	height: 70px;
+	color: #000;
+	text-decoration: none;
+}
+
+.categories .cat .list_product .card img{
+	width: 60%;
+	margin: 0 auto;
+}
+.categories .c_all{
+	display: flex;
+	flex-direction: row;
+	width: 1100px;
+	margin: 0 auto;
+}
+.categories .c_all > img{
+	width: 5%;
+	height: 3%;
+	margin-top: 8%;
+	opacity: 0.5;
+
+}
+.categories .cat .all{
+	float: right;
+	color:rgba(0, 128, 0, 0.645);
+	margin-top: 8px;
+	
+}
+
+.category2, .category3, .category4{
+	margin-top: 40px;
+}
+
+footer{
+	width: 1000px;
+	height: 50px;
+	margin: 0 auto;
+	background-image: url('../img/fon1.jpg');
+}
+
+/* ************************************************ */
+
+.info{
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.info_perfume{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 30px;
+}
+.t_p{
+	width: 450px;
+	text-align: center;
+	-webkit-box-shadow: 4px 4px 23px 11px rgba(255, 87, 183, 0.2);
+	-moz-box-shadow: 4px 4px 23px 11px rgba(255, 87, 183, 0.2);
+	box-shadow: 4px 4px 23px 11px rgba(255, 87, 183, 0.2);
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.i_p h2{
+	font-size: 26px;
+	margin-bottom: 40px;
+}
+.i_p{
+	width: 450px;
+	padding: 0 25px;
+	font-size: 17px;
+}
+hr{
+	color:#ff91b2;
+}
+.in_cat{
+	margin-top: 65px;
+}

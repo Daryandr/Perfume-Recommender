@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Духи</title>
+	<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+	<div class="conteiner">
+		<header>
+			<div class="title_system">
+				<h1><a href="/">Рекомендательная система парфюма</a></h1>
+			</div>
+			<div class="info_user">
+				<img src="{% static 'main/img/user.svg' %}" alt="">
+				<div class="nik"><p>BlackAmberMoon</p></div>
+			</div>
+		</header>
+
+		<main class="info">
+			<div class="info_perfume">
+				<div class="t_p">
+					<img src="{{ info_perfume.image_url }}" alt="">
+				</div>
+				<div class="i_p">
+					<h2>{{ info_perfume.title }}</h2>
+					<p> <i><b> Год выпуска:</b></i> {{ info_perfume.date }}</p>
+					<hr>
+					<div class="spisok">
+						<div>
+							<p><i><b>Аккорды:</b></i> </p>
+							<p>{{ accords_perfume }}</p>
+					   </div>
+						<div>
+							<p><i><b>Ноты:</b></i> </p>
+							<p>{{ notes_perfume }}</p>
+						</div>
+					</div>
+					<hr>
+					<p><i><b>Рейтинг:</b></i> {{ info_perfume.average_rating }} ({{ info_perfume.ratings_count }})</p>
+					<hr>
+					<p id="longevity"><i><b>Стойкость:</b></i> {{ info_perfume.longevity }}</p>
+					<hr>
+					<p id="season"><i><b>Сезон:</b></i> {{ info_perfume.season }}</p>
+					<hr>
+				</div>
+			</div>
+		</main>
+
+		<div class="in_cat categories">
+			<div class="cat category8">
+				<h2>Похожие ароматы</h2>
+				<div class="c_all">
+					<img src="{% static 'main/img/back_arrow_5821.png' %}" alt="">
+					<div class="list_product">
+						{% for el in list_perfume_similar_content %}
+						<div class="card">
+							<a href="/perfume/{{ el.0 }}">{{ el.1}}</a>
+							<img src="{{ el.2 }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					<img src="{% static 'main/img/forwardarrow_haciaadelante_4836.png' %}" alt="">
+				</div>
+			</div>
+
+			<div class="cat category9">
+				<h2>С этим также выбирают</h2>
+				<div class="c_all">
+					<img src="{% static 'main/img/back_arrow_5821.png' %}" alt="">
+					<div class="list_product">
+						{% for el in list_perfume_similar_SVD %}
+						<div class="card">
+							<a href="/perfume/{{ el.0 }}">{{ el.1}}</a>
+							<img src="{{ el.2 }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					<img src="{% static 'main/img/forwardarrow_haciaadelante_4836.png' %}" alt="">
+				</div>
+			</div>
+		</div>
+		<footer></footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Духи</title>
+
+	<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+	<div class="conteiner">
+		<header>
+			<div class="title_system">
+				<h1><a href="/">Рекомендательная система парфюма</a></h1>
+			</div>
+			<div class="info_user">
+			<img src="{% static 'main/img/user.svg' %}" alt="">
+			<div class="nik"><p> {{ nik_user.name }}</p></div>
+			</div>
+		</header>
+		<main>
+			<div class="search">
+				<form action="search" method="POST">
+					{% csrf_token %}
+					<input type="text" name="request" class="request" placeholder="Искать ...">
+					<input type="submit" class="submit" value="Найти">
+				</form>
+			</div>
+
+			<div class="categories">
+				<div class="cat category1">
+					<h2>Может вам понравиться</h2>
+					<div class="c_all">
+					<img src="{% static 'main/img/back_arrow_5821.png' %}" alt="">
+					<div class="list_product">
+						{% for el in list_perfume_user_SVD %}
+							<div class="card">
+							<a href="/perfume/{{ el.0 }}">{{ el.1}}</a>
+							<img src="{{ el.2 }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					<img src="{% static 'main/img/forwardarrow_haciaadelante_4836.png' %}" alt="">
+					</div>
+				</div>
+
+				<div class="cat category2">
+					<h2>На основе ваших предпочтений</h2>
+					<div class="c_all">
+					<img src="{% static 'main/img/back_arrow_5821.png' %}" alt="">
+					<div class="list_product">
+						{% for el in list_perfume_user_content %}
+							<div class="card">
+							<a href="/perfume/{{ el.0 }}">{{ el.1}}</a>
+							<img src="{{ el.2 }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					<img src="{% static 'main/img/forwardarrow_haciaadelante_4836.png' %}" alt="">
+					</div>
+				</div>
+
+				<div class="cat category3">
+					<h2>Лучшие ароматы</h2>
+					<div class="c_all">
+					<img src="{% static 'main/img/back_arrow_5821.png' %}" alt="">
+					<div class="list_product">
+						{% for el in list_perfume_rated %}
+							<div class="card">
+							<a href="/perfume/{{ el.0 }}">{{ el.1}}</a>
+							<img src="{{ el.2 }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					<img src="{% static 'main/img/forwardarrow_haciaadelante_4836.png' %}" alt="">
+					</div>
+				</div>
+
+				<div class="cat category4">
+					<h2>Ароматы сезона</h2>
+					<div class="c_all">
+					<img src="{% static 'main/img/back_arrow_5821.png' %}" alt="">
+					<div class="list_product">
+						{% for el in list_perfume_season %}
+							<div class="card">
+							<a href="/perfume/{{ el.0 }}">{{ el.1}}</a>
+							<img src="{{ el.2 }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					<img src="{% static 'main/img/forwardarrow_haciaadelante_4836.png' %}" alt="">
+					</div>
+				</div>
+
+				<div class="cat category5">
+					<h2>Самые популярные</h2>
+					<div class="c_all">
+					<img src="{% static 'main/img/back_arrow_5821.png' %}" alt="">
+					<div class="list_product">
+						{% for el in list_perfume_popularity %}
+							<div class="card">
+							<a href="/perfume/{{ el.0 }}">{{ el.1}}</a>
+							<img src="{{ el.2 }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					<img src="{% static 'main/img/forwardarrow_haciaadelante_4836.png' %}" alt="">
+					</div>
+				</div>
+
+				<div class="cat category6">
+					<h2>Новинки</h2>
+					<div class="c_all">
+					<img src="{% static 'main/img/back_arrow_5821.png' %}" alt="">
+					<div class="list_product">
+						{% for el in list_perfume_date %}
+							<div class="card">
+							<a href="/perfume/{{ el.0 }}">{{ el.1}}</a>
+							<img src="{{ el.2 }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					<img src="{% static 'main/img/forwardarrow_haciaadelante_4836.png' %}" alt="">
+					</div>
+				</div>
+
+				<div class="cat category7">
+					<h2>Самые стойкие</h2>
+					<div class="c_all">
+					<img src="{% static 'main/img/back_arrow_5821.png' %}" alt="">
+					<div class="list_product">
+						{% for el in list_perfume_longevity %}
+							<div class="card">
+							<a href="/perfume/{{ el.0 }}">{{ el.1}}</a>
+							<img src="{{ el.2 }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+					<img src="{% static 'main/img/forwardarrow_haciaadelante_4836.png' %}" alt="">
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+</html>
